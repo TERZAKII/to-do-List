@@ -4,4 +4,6 @@ export interface Job {
   salary: number
   id: string
 }
-
+export interface Pop {
+  name: string
+}

@@ -19,18 +19,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { Job } from '../types/Job'
+<script setup lang="ts">
+import { type Job } from '../types/Job'
 
-export default defineComponent({
-  props: {
-    jobs: {
-      required: true,
-      type: Array as PropType<Job[]>,
-    },
-  },
-})
+defineProps<{
+  jobs: Job[]
+}>()
 </script>
 
 <style scoped></style>
