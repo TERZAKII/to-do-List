@@ -25,6 +25,9 @@ import { type Job } from '../types/Job'
 defineProps<{
   jobs: Job[]
 }>()
+
 </script>
+
+
 
 <style scoped></style>

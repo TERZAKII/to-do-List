@@ -9,21 +9,32 @@ const jobs = ref<Job[]>([
   { title: 'guard', location: 'Rixos', salary: 50000, id: '3' },
   { title: 'fisherman', location: 'lake Baikal', salary: 20000, id: '4' },
 ])
+
+const title = ref('')
+const location = ref('')
+const salary = ref(0)
+
 const currentId = ref(5)
 
 const setNewJob = (job: Job) => {
   jobs.value.unshift(job)
+  title.value = ''
+  location.value = ''
+  salary.value = 0
 }
 </script>
 
 <template>
   <div class="app">
+    <input type="text" v-model="title" />
+    <input type="text" v-model="location" />
+    <input type="number" v-model="salary" />
     <button
       @click="
         setNewJob({
-          title: 'farm worker',
-          location: 'Karagandy',
-          salary: 30000,
+          title: title,
+          location: location,
+          salary: salary,
           id: `${currentId++}`,
         })
       "
